@@ -1,95 +1,42 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import Image from 'next/image';
+import styles from './layout.module.css'
+import style from './page.module.css'
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+import imgacceuil from '@/public/xmaleya-accueil.jpg';
+import eventImage1 from '@/public/xmaleya-accueil.jpg';
+import eventImage2 from '@/public/evenement1.jpeg';
+import eventImage3 from '@/public/evenement2.jpg';
+
+
+export default function Accueil() {
+    return <>
+        <section id="introduction">
+            <h2>Bienvenue sur le site officiel de X-Maleya</h2>
+            <p>X-Maleya est un groupe de musique camerounais connu pour son style unique qui mélange des rythmes traditionnels africains avec des influences modernes. Depuis leur formation, ils ont captivé le public avec leurs performances dynamiques et leur musique entraînante.</p>
+            <Image src={imgacceuil} alt="photo-x-Maleya" />
+            <p>Le groupe est composé de trois membres talentueux : Roger, Auguste, et Hais. Ensemble, ils ont sorti plusieurs albums à succès et ont parcouru le monde pour partager leur passion pour la musique.</p>
+        </section>
+
+
+        <section>
+            <h2>Événements Passés</h2>
+            <div className={style.gallery}>
+                <div className={style.event}>
+                    <Image src={eventImage1} alt="Événement 1" />
+                    <p>Concert à Douala - 2022</p>
+                </div>
+                <div className={style.event}>
+                    <Image src={eventImage2} alt="Événement 2" />
+                    <p>Festival de Yaoundé - 2021</p>
+                </div>
+                <div className={style.event}>
+                    <Image src={eventImage3} alt="Événement 3" />
+                    <p>Showcase à Paris - 2020</p>
+                </div>
+
+            </div>
+        </section>
+    </>
 }

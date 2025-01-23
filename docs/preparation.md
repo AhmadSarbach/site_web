@@ -60,7 +60,7 @@ Voici quelques pages existantes pour vous inspirer dans la conception du site :
    - Description : Présente les dates de tournée, les lieux, et un design moderne avec des animations dynamiques.
 
 2. **Songkick - Concerts et Tournées**  
-   - URL : [https://www.songkick.com/](https://www.songkick.com/)  
+   - URL : [https://www.songkick.com/](ZS)  
    - Description : Plateforme pour suivre les artistes et découvrir leurs dates de tournée. Structure claire avec filtres pratiques.
 
 3. **Ticketmaster - Concerts**  
