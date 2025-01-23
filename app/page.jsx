@@ -1,6 +1,5 @@
 
 import Image from 'next/image';
-import styles from './layout.module.css'
 import style from './page.module.css'
 
 
