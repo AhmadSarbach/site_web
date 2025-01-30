@@ -1,29 +1,55 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import styles from './layout.module.css'
-
+import { Lobster, Roboto, Cinzel, Bowlby_One } from 'next/font/google';
+import styles from './layout.module.css';
 import './globals.css';
+
+const lobster = Lobster({
+    weight: '400',
+    style: 'normal',
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-lobster'
+});
+
+const roboto = Roboto({
+    weight: ['400', '700'],
+    style: 'normal',
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-roboto'
+});
+
+const cinzel = Cinzel({
+    weight: '400',
+    style: 'normal',
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-cinzel'
+});
+
+const bowlby_one = Bowlby_One({
+    weight: '400',
+    style: 'normal',
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-bowlby_one'
+});
 
 export const metadata = {
     title: "Site officiel X-Maleya",
     description: "",
 };
 
-
-
 export default function RootLayout({ children }) {
-    return <html lang="en">
+    return <html lang="en" className={lobster.variable + ' ' + roboto.variable + ' ' + cinzel.variable + ' ' + bowlby_one.variable}>
         <body className={styles.body}>
-            <Header>
-
-            </Header>
-            <main  className={styles.main}>
-            
-            {children}
+            <Header />
+            <main className={styles.main}>
+                {children}
             </main>
 
-            <Footer>
-            </Footer>
+            <Footer />
         </body>
     </html>
 

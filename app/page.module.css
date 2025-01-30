@@ -1,17 +1,13 @@
-
 .gallery {
     display: flex;
     flex-direction: row;
     gap: 20px;
-
-   
 }
 
-.gallery img{
+.gallery img {
     width: 500px;
-    height: 400px; 
-    object-fit: cover; 
+    height: 400px;
+    object-fit: cover;
     border-radius: 8px;
     gap: 200px;
-
 }

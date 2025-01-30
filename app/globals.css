@@ -1,0 +1,20 @@
+html {
+    box-sizing: border-box;
+    font-family: var(--font-roboto);
+}
+
+h1 {
+    font-family: var(--font-lobster);
+}
+
+li {
+    font-family: var(--font-cinzel);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-bowlby_one);
+}

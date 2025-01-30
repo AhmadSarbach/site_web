@@ -46,7 +46,8 @@ Créer un site web qui présente les différentes dates de concerts d'un groupe 
 ## Palette de Couleurs
 Les couleurs utilisées pour le design du site web reflèteront une ambiance moderne et immersive, adaptée au style musical du groupe :
 - **Couleur principale** : #1F2937 (Gris foncé - pour l'arrière-plan principal).
-- **Couleur secondaire** : #F59E0B (Orange vif - pour les boutons et accents).
+- **Couleur secondaire_1** : #F59E0B (Orange vif - pour les boutons et accents).
+-**Couleur secondaire_2** : #825f26 (Pour les Header et Footer et aussi pour les boutons).
 - **Couleur tertiaire** : #34D399 (Vert menthe - pour les liens et les détails).
 - **Texte principal** : #FFFFFF (Blanc - pour le contenu principal).
 - **Texte secondaire** : #D1D5DB (Gris clair - pour les sous-titres).

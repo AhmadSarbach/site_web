@@ -1,13 +1,9 @@
-
 import Image from 'next/image';
 import style from './page.module.css'
-
-
 import imgacceuil from '@/public/xmaleya-accueil.jpg';
 import eventImage1 from '@/public/xmaleya-accueil.jpg';
 import eventImage2 from '@/public/evenement1.jpeg';
 import eventImage3 from '@/public/evenement2.jpg';
-
 
 export default function Accueil() {
     return <>
@@ -17,7 +13,6 @@ export default function Accueil() {
             <Image src={imgacceuil} alt="photo-x-Maleya" />
             <p>Le groupe est composé de trois membres talentueux : Roger, Auguste, et Hais. Ensemble, ils ont sorti plusieurs albums à succès et ont parcouru le monde pour partager leur passion pour la musique.</p>
         </section>
-
 
         <section>
             <h2>Événements Passés</h2>

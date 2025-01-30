@@ -1,0 +1,54 @@
+.conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    gap: 20px;
+}
+
+.bouton {
+    background-color: #825f26;
+    font-family: var(--font-cinzel);
+    color: aliceblue;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    animation: clignotement 1s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes clignotement {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes clignotement-couleur {
+    0% {
+        background-color: #F59E0B;
+    }
+
+    50% {
+        background-color: #fbbf24;
+    }
+
+    100% {
+        background-color: #F59E0B;
+    }
+}
+
+.bouton:hover {
+    transform: scale(1.05);
+    animation: none;
+}
