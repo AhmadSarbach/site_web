@@ -5,6 +5,7 @@ import Tour from '@/components/Tour';
 export default function Evenement2() {
     return <>
         <div className={styles.background}>
+            <section className={styles.tour}>
             <Tour>
                 <h3>21/11/2025 | Madrid | WiZink Center | 18:45 GMT</h3>
             </Tour>
@@ -20,6 +21,7 @@ export default function Evenement2() {
             <Tour>
                 <h3>03/12/2025 | Lisbonne | Altice Arena | 19:00 GMT</h3>
             </Tour>
+            </section>
 
         </div>
     </>
