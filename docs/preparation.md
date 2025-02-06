@@ -48,6 +48,7 @@ Les couleurs utilisées pour le design du site web reflèteront une ambiance mod
 - **Couleur principale** : #1F2937 (Gris foncé - pour l'arrière-plan principal).
 - **Couleur secondaire_1** : #F59E0B (Orange vif - pour les boutons et accents).
 -**Couleur secondaire_2** : #825f26 (Pour les Header et Footer et aussi pour les boutons).
+-**Couleur secondaire_3** : #FFD700, #F59E0B et  #FFFFFF pour les titres.
 - **Couleur tertiaire** : #34D399 (Vert menthe - pour les liens et les détails).
 - **Texte principal** : #FFFFFF (Blanc - pour le contenu principal).
 - **Texte secondaire** : #D1D5DB (Gris clair - pour les sous-titres).

@@ -10,6 +10,7 @@
     font-size: 14px;
 }
 
+
 .footer ul {
     list-style: none;
     padding: 0;
@@ -17,7 +18,9 @@
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
+
 
 .footer a {
     color: #34D399;
@@ -27,4 +30,20 @@
 
 .footer a:hover {
     color: #F59E0B;
+}
+
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 15px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -1,8 +1,13 @@
 import Image from 'next/image';
-import style from './page.module.css'
+
+import style from './page.module.css';
+
 import imgacceuil from '@/public/xmaleya-accueil.jpg';
+
 import eventImage1 from '@/public/xmaleya-accueil.jpg';
+
 import eventImage2 from '@/public/evenement1.jpeg';
+
 import eventImage3 from '@/public/evenement2.jpg';
 
 export default function Accueil() {
@@ -17,15 +22,15 @@ export default function Accueil() {
         <section>
             <h2>Événements Passés</h2>
             <div className={style.gallery}>
-                <div className={style.event}>
+                <div>
                     <Image src={eventImage1} alt="Événement 1" />
                     <p>Concert à Douala - 2022</p>
                 </div>
-                <div className={style.event}>
+                <div>
                     <Image src={eventImage2} alt="Événement 2" />
                     <p>Festival de Yaoundé - 2021</p>
                 </div>
-                <div className={style.event}>
+                <div>
                     <Image src={eventImage3} alt="Événement 3" />
                     <p>Showcase à Paris - 2020</p>
                 </div>

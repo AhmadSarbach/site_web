@@ -15,7 +15,7 @@
     border: none;
     cursor: pointer;
     position: relative;
-    animation: clignotement 1s infinite;
+    animation: clignotement 4s infinite;
     transition: all 0.3s ease;
 }
 
@@ -54,4 +54,39 @@
 
 .texte {
     margin-bottom: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .conteneur {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .titre {
+        font-size: 2rem;
+    }
+
+    .texte {
+        font-size: 1rem;
+    }
+
+    .bouton {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titre {
+        font-size: 1rem;
+    }
+
+    .texte {
+        font-size: 0.75rem;
+    }
+
+    .bouton {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
 }

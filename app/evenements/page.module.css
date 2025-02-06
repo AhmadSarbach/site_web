@@ -1,0 +1,48 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/concert.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.tour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .tour {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .tour h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tour {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .tour h3 {
+        font-size: 1rem;
+    }
+}

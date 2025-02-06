@@ -1,7 +1,11 @@
 import Header from '@/components/Header';
+
 import Footer from '@/components/Footer';
+
 import { Lobster, Roboto, Cinzel, Bowlby_One } from 'next/font/google';
+
 import styles from './layout.module.css';
+
 import './globals.css';
 
 const lobster = Lobster({

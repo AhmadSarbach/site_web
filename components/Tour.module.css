@@ -20,6 +20,10 @@
     transition: all 0.3s ease;
 }
 
+.bouton a {
+    color: white;
+}
+
 @keyframes clignotement {
     0% {
         opacity: 1;
