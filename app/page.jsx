@@ -34,7 +34,6 @@ export default function Accueil() {
                     <Image src={eventImage3} alt="Événement 3" />
                     <p>Showcase à Paris - 2020</p>
                 </div>
-
             </div>
         </section>
     </>

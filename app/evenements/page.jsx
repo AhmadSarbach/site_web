@@ -18,7 +18,6 @@ export default function Evenement() {
                     <h3>27/11/2025 | Amsterdam | Ziggo Dome | 20:30 GMT</h3>
                 </Tour>
             </section>
-
         </div>
     </>
 }
