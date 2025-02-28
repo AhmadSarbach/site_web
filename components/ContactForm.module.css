@@ -54,3 +54,9 @@
     font-size: 0.875rem;
     margin-top: 0.25rem;
 }
+
+.success {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}

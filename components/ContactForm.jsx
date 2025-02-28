@@ -1,66 +1,46 @@
-"use client"
+"use client";
 
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import styles from './ContactForm.module.css';
+import { contactServeur } from '@/actions/contact';
+import { validateContact } from '@/validations/validation_contact';
+import emailjs from 'emailjs-com';
 
 export default function FormContact() {
-    /**
-     * @param {FormData} formData 
-     */
-    const contact = (previousFormState, formData) => {
-        const courriel = formData.get('courriel');
-        const nom = formData.get('nom');
-        const message = formData.get('message');
+    const [successMessage, setSuccessMessage] = useState("");
 
-        let newFormState = {
-            courriel: { erreur: null, valeur: '' },
-            nom: { erreur: null, valeur: '' },
-            message: { erreur: null, valeur: '' }
-        }
+    const contact = async (previousFormState, formData) => {
+        let [erreur, newFormState] = validateContact(formData);
 
-        let erreur = false;
-        if (!courriel) {
-            erreur = true;
-            newFormState.courriel.erreur = 'Veuillez entrer une adresse courriel.';
-        } else if (!courriel.match(/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/)) {
-            erreur = true;
-            newFormState.courriel.erreur = 'Veuillez entrer une adresse courriel valide.';
-        }
+        if (!erreur) {
+            [erreur, newFormState] = await contactServeur(formData);
 
-        if (!nom) {
-            erreur = true;
-            newFormState.nom.erreur = 'Veuillez entrer votre nom.';
-        } else if (nom.length < 2) {
-            erreur = true;
-            newFormState.nom.erreur = 'Le nom doit contenir au moins 2 caractères.';
-        }
+            try {
+                await emailjs.send(
+                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                    {
+                        nom: formData.get('nom'),
+                        courriel: formData.get('courriel'),
+                        message: formData.get('message')
+                    },
+                    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+                );
 
-        if (!message) {
-            erreur = true;
-            newFormState.message.erreur = 'Veuillez entrer un message.';
-        } else if (message.length < 10) {
-            erreur = true;
-            newFormState.message.erreur = 'Le message doit contenir au moins 10 caractères.';
-        }
-        else if (message.length > 100) {
-            erreur = true;
-            newFormState.message.erreur = 'Le message ne doit pas depasser 100 caractères.'
+                setSuccessMessage("Votre message a été envoyé avec succès !");
+            } catch (error) {
+                console.error(`Erreur lors de l'envoi de l'email : ${error.text || error.message}`);
+            }
         }
 
         if (erreur) {
-            newFormState.courriel.valeur = courriel;
-            newFormState.nom.valeur = nom;
-            newFormState.message.valeur = message;
-        }
-
-        if (!erreur) {
-            console.log("Nom:", nom);
-            console.log("Courriel:", courriel);
-            console.log("Message:", message);
+            newFormState.courriel.valeur = formData.get('courriel');
+            newFormState.nom.valeur = formData.get('nom');
+            newFormState.message.valeur = formData.get('message');
         }
 
         return newFormState;
-    }
+    };
 
     const [formState, formAction] = useActionState(contact, {
         courriel: { erreur: null, valeur: '' },
@@ -68,26 +48,31 @@ export default function FormContact() {
         message: { erreur: null, valeur: '' }
     });
 
-    return <form action={formAction} className={styles.form} noValidate>
+    return (
+        <div>
+            <form action={formAction} className={styles.form} noValidate>
+                <label>
+                    Nom:
+                    <input type="text" name="nom" defaultValue={formState.nom.valeur} />
+                    <div className={styles.erreur}>{formState.nom.erreur}</div>
+                </label>
 
-        <label>
-            Nom:
-            <input type="text" name="nom" defaultValue={formState.nom.valeur} />
-            <div className={styles.erreur}>{formState.nom.erreur}</div>
-        </label>
+                <label>
+                    Courriel:
+                    <input type="email" name="courriel" defaultValue={formState.courriel.valeur} />
+                    <div className={styles.erreur}>{formState.courriel.erreur}</div>
+                </label>
 
-        <label>
-            Courriel:
-            <input type="email" name="courriel" defaultValue={formState.courriel.valeur} />
-            <div className={styles.erreur}>{formState.courriel.erreur}</div>
-        </label>
+                <label>
+                    Message:
+                    <textarea name="message" defaultValue={formState.message.valeur}></textarea>
+                    <div className={styles.erreur}>{formState.message.erreur}</div>
+                </label>
 
-        <label>
-            Message:
-            <textarea name="message" defaultValue={formState.message.valeur}></textarea>
-            <div className={styles.erreur}>{formState.message.erreur}</div>
-        </label>
+                <button type="submit">Envoyer</button>
+            </form>
 
-        <button type="submit">Envoyer</button>
-    </form>
+            {successMessage && <p className={styles.success}>{successMessage}</p>}
+        </div>
+    );
 }
