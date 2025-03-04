@@ -59,4 +59,5 @@
     color: green;
     font-weight: bold;
     margin-top: 10px;
+    font-family: var(--font-cinzel);
 }
