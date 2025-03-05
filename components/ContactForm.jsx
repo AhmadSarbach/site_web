@@ -31,6 +31,7 @@ export default function FormContact() {
             } catch (error) {
                 console.error(`Erreur lors de l'envoi de l'email : ${error.text || error.message}`);
             }
+            console.log("message envoyé  avec succès");
         }
 
         if (erreur) {
