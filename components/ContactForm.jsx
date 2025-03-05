@@ -16,15 +16,18 @@ export default function FormContact() {
             [erreur, newFormState] = await contactServeur(formData);
 
             try {
+                const service_id = "service_96o1gsl"
+                const template_id = "template_63lhvtp"
+                const user_id = "hoEQqTbGoiaMKhWFb"
                 await emailjs.send(
-                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                    service_id,
+                    template_id,
                     {
                         nom: formData.get('nom'),
                         courriel: formData.get('courriel'),
                         message: formData.get('message')
                     },
-                    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+                    user_id
                 );
 
                 setSuccessMessage("Votre message a été envoyé avec succès !");
