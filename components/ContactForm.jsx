@@ -17,14 +17,14 @@ export default function FormContact() {
 
             try {
                 await emailjs.send(
-                    "service_96o1gsl",
-                    "template_63lhvtp",
+                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
                     {
                         nom: formData.get('nom'),
                         courriel: formData.get('courriel'),
                         message: formData.get('message')
                     },
-                    "hoEQqTbGoiaMKhWFb"
+                    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
                 );
 
                 setSuccessMessage("Votre message a été envoyé avec succès !");
