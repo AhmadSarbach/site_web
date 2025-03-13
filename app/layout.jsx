@@ -42,7 +42,7 @@ const bowlby_one = Bowlby_One({
 
 export const metadata = {
     title: "Site officiel X-Maleya",
-    description: "",
+    description: "Site web qui présente les differentes dates de concerts du groupe X-Maleya",
 };
 
 export default function RootLayout({ children }) {

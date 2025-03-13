@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import style from './page.module.css';
 
-import imgacceuil from '@/public/xmaleya-accueil.jpg';
+import imgacceuil from '@/public/xmaleya-accueil.webp';
 
 import eventImage1 from '@/public/xmaleya-accueil.jpg';
 
@@ -10,12 +10,17 @@ import eventImage2 from '@/public/evenement1.jpeg';
 
 import eventImage3 from '@/public/evenement2.jpg';
 
+export const metadata = {
+    title: "Acceuil | Site officiel X-Maleya",
+    description: "Page d'acceuil donnant une présentation générale du groupe X-Maleya",
+};
+
 export default function Accueil() {
     return <>
         <section id="introduction">
             <h2>Bienvenue sur le site officiel de X-Maleya</h2>
             <p>X-Maleya est un groupe de musique camerounais connu pour son style unique qui mélange des rythmes traditionnels africains avec des influences modernes. Depuis leur formation, ils ont captivé le public avec leurs performances dynamiques et leur musique entraînante.</p>
-            <Image src={imgacceuil} alt="photo-x-Maleya" />
+            <Image src={imgacceuil} priority alt="photo-x-Maleya"/>
             <p>Le groupe est composé de trois membres talentueux : Roger, Auguste, et Hais. Ensemble, ils ont sorti plusieurs albums à succès et ont parcouru le monde pour partager leur passion pour la musique.</p>
         </section>
 

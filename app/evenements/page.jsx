@@ -4,6 +4,11 @@ import styles from './page.module.css';
 
 import Tour from '@/components/Tour';
 
+export const metadata = {
+    title: "Evenements | Site officiel X-Maleya",
+    description: "Page qui présente toutes les differentes dates de concerts du groupe X-Maleya",
+};
+
 export default function Evenement() {
     return <>
         <div className={styles.background}>

@@ -2,6 +2,11 @@ import styles from "./page.module.css";
 
 import Introduction from "@/components/Introduction";
 
+export const metadata = {
+    title: "Date2 | Site officiel X-Maleya",
+    description: "Page qui présente toutes les informations sur le deuxieme concert du groupe X-Maleya",
+};
+
 export default function Evenement1() {
     return <>
         <div className={styles.conteneur}>

@@ -4,7 +4,6 @@ import { useActionState, useState } from 'react';
 import styles from './ContactForm.module.css';
 import { contactServeur } from '@/actions/contact';
 import { validateContact } from '@/validations/validation_contact';
-import emailjs from 'emailjs-com';
 
 export default function FormContact() {
     const [successMessage, setSuccessMessage] = useState("");
@@ -14,24 +13,7 @@ export default function FormContact() {
 
         if (!erreur) {
             [erreur, newFormState] = await contactServeur(formData);
-
-            try {
-                await emailjs.send(
-                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-                    {
-                        nom: formData.get('nom'),
-                        courriel: formData.get('courriel'),
-                        message: formData.get('message')
-                    },
-                    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-                );
-
-                setSuccessMessage("Votre message a été envoyé avec succès !");
-            } catch (error) {
-                console.error(`Erreur lors de l'envoi de l'email : ${error.text || error.message}`);
-            }
-            console.log("message envoyé  avec succès");
+            setSuccessMessage("Votre message a été envoyé avec succès !");
         }
 
         if (erreur) {
