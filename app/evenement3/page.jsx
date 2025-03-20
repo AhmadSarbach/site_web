@@ -3,11 +3,11 @@ import styles from "./page.module.css";
 import Introduction from "@/components/Introduction";
 
 export const metadata = {
-    title: "Date3 | Site officiel X-Maleya",
-    description: "Page qui présente toutes les informations sur le troisième concert du groupe X-Maleya",
+    title: "Amsterdam 2025 | Site officiel X-Maleya",
+    description: "Page dédiée au concert de X-Maleya à Amsterdam : date, horaire, lieu et détails pour une soirée inoubliable au Ziggo Dome.",
 };
 
-export default function Evenement1() {
+export default function Evenement3() {
     return <>
         <div className={styles.conteneur}>
             <video

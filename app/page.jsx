@@ -11,8 +11,8 @@ import eventImage2 from '@/public/evenement1.jpeg';
 import eventImage3 from '@/public/evenement2.jpg';
 
 export const metadata = {
-    title: "Acceuil | Site officiel X-Maleya",
-    description: "Page d'acceuil donnant une présentation générale du groupe X-Maleya",
+    title: "Accueil | Site officiel X-Maleya",
+    description: "Page d'accueil présentant le groupe X-Maleya, son univers musical et ses actualités.",
 };
 
 export default function Accueil() {

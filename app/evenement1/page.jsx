@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 import Introduction from "@/components/Introduction";
 
 export const metadata = {
-    title: "Date1 | Site officiel X-Maleya",
-    description: "Page qui présente toutes les informations sur le premier concert du groupe X-Maleya",
+    title: "Madrid 2025 | Site officiel X-Maleya",
+    description: "Page dédiée au concert de X-Maleya à Madrid : date, horaire, lieu et informations pour vivre une soirée inoubliable.",
 };
 
 export default function Evenement1() {

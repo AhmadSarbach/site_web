@@ -3,11 +3,11 @@ import styles from "./page.module.css";
 import Introduction from "@/components/Introduction";
 
 export const metadata = {
-    title: "Date2 | Site officiel X-Maleya",
-    description: "Page qui présente toutes les informations sur le deuxieme concert du groupe X-Maleya",
+    title: "Rome 2025 | Site officiel X-Maleya",
+    description: "Page dédiée au concert de X-Maleya à Rome : date, horaire, lieu et informations pour une expérience musicale inoubliable.",
 };
 
-export default function Evenement1() {
+export default function Evenement2() {
     return <>
         <div className={styles.conteneur}>
             <video

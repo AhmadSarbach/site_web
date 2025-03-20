@@ -6,7 +6,7 @@ import Tour from '@/components/Tour';
 
 export const metadata = {
     title: "Evenements | Site officiel X-Maleya",
-    description: "Page qui présente toutes les differentes dates de concerts du groupe X-Maleya",
+    description: "Page regroupant toutes les dates et informations sur les concerts à venir du groupe X-Maleya.",
 };
 
 export default function Evenement() {
